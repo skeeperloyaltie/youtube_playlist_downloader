@@ -1,7 +1,6 @@
 # Download each song in a playlist from youtube and save it to a folder
 import os 
 import sys
-import pytube
 from pytube import Playlist
 import youtube_dl
 
