@@ -3,16 +3,11 @@ import os
 import sys
 from pytube import Playlist
 import youtube_dl
-
-
-
 # get all the videos in a playlist and store the url's in a list
 def get_playlist_videos(playlist_url):
     playlist = Playlist(playlist_url)
     video_urls = playlist.video_urls
     return video_urls
-
-
 # using youtube_dl download all the videos in  the list to a folder
 def download_videos(video_urls, folder_name):
     for url in video_urls:
@@ -22,7 +17,7 @@ def download_videos(video_urls, folder_name):
         }
         with youtube_dl.YoutubeDL(ydl_opts) as ydl:
             ydl.download([url])
-            
+          
 # use youtube_dl to convert the videos to mp3
 def convert_to_mp3(folder_name):
     # use youtube_dl to convert the videos to mp3
@@ -53,8 +48,5 @@ def main():
     # download the videos
     download_videos(video_urls, folder_name)
     print("Download complete")
-    
-
-
 if __name__ == "__main__":
     main()
